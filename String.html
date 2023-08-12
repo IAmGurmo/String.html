@@ -1,0 +1,70 @@
+Created By: William Duran
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <!--Below is the CSS. The coloring for the background. Size of the Checker box. Also writing for the answer.-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0df1f1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<!--Below contains the coding for the action click box to check if a Palindrom-->
+<body>
+    <div id="container">
+        <h1>Palindrome Checker</h1>
+        <button onclick="checkPalindrome()">Check Palindrome</button>
+        <p id="result"></p>
+    </div>
+<!--Below is the js coding for the parameters to actually check if word is a Palindrom or not-->
+    <script>
+        function isPalindrome(str) {
+            str = str.replace(/\s/g, '').toLowerCase();
+            return str === str.split('').reverse().join('');
+        }
+
+        function checkPalindrome() {
+            let continueChecking = true;
+            while (continueChecking) {
+                const inputString = prompt("Type word and click OK. When box clears, click cancel to check if word is a Palindrome:");
+
+                if (inputString === null) {
+                    continueChecking = false;
+                } else if (inputString.trim().toLowerCase() === 'exit') {
+                    continueChecking = false; 
+                } else {
+                    const resultElement = document.getElementById('result');
+
+                    if (isPalindrome(inputString)) {
+                        resultElement.textContent = `"${inputString}" is a palindrome!`;
+                    } else {
+                        resultElement.textContent = `"${inputString}" is not a palindrome.`;
+                    }
+                }
+            }
+        }
+    </script> <br>
+        <img id="memeimage" src="c:\Users\15053\Documents\UAT\CSC102\Phobia.jpg" width="700" height="700"> <!---This is just for fun-->
+</body>
+</html>
