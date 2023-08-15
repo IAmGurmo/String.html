@@ -36,13 +36,12 @@ Created By: William Duran
         <h1>Palindrome Checker</h1>
         <button onclick="checkPalindrome()">Check Palindrome</button>
         <p id="result"></p>
-<!--Below is the coding for the containers for the first, last name and zip code-->    
-        <div id="container">
+    <div id="container">
             <h1>Secret Message</h1>
             <input type="text" id="firstName" placeholder="First Name">
             <input type="text" id="lastName" placeholder="Last Name">
             <input type="text" id="zipCode" placeholder="Zip Code">
-            <button onclick="checkInputs()">Get Message</button>
+            <button onclick="checkInputs()">Check Inputs</button>
             <p id="result"></p>
     </div>
 <!--Below is the js coding for the parameters to actually check if word is a Palindrom or not-->
@@ -51,28 +50,27 @@ Created By: William Duran
             str = str.replace(/\s/g, '').toLowerCase();
             return str === str.split('').reverse().join('');
         }
-// Below is the function codign for creating the boxes for first, last name and zip code inputs.
+        // Below is the Function coding for creating the boxes for first, last name and zip code inputs
         function checkInputs() {
             const firstName = document.getElementById('firstName').value.trim();
             const lastName = document.getElementById('lastName').value.trim();
             const zipCode = document.getElementById('zipCode').value.trim();
             const resultElement = document.getElementById('result');
 
-            const fullname = `${firstName} ${lastName}`;
+            const fullName = `${firstName} ${lastName}`;
 
-// Below is the coding for the results one info is input by the user.
-            if (fullname.length > 20) {
+            if (fullName.length > 20) {
                 resultElement.textContent = "Full name must have 20 characters or less.";
-                return;    
+                return;
             }
 
             if (!/^\d{5}$/.test(zipCode)) {
                 resultElement.textContent = "Invalid zip code. Must contain 5 digits.";
+                return;
             }
 
-            resultElement.textContent = "01001000 01100101 01101100 01110000 00100000 01101101 01100101 00100000 01001111 01100010 01101001 00100000 01010111 01100001 01101110 - Help Me Obi Wan";
+            resultElement.textContent = "Congratulations! You've unlocked the secret message: Open sesame!";
         }
-
         function checkPalindrome() {
             let continueChecking = true;
             while (continueChecking) {
