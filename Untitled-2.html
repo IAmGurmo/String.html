@@ -1,100 +1,71 @@
-Created By: William Duran
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Checker</title>
-    <!--Below is the CSS for the background, box with "Palindrome checker" and check action tab. Also gives us the result font.-->
+    <title>Your Web Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0df1f1;
+        table, th, td{
+            margin-left: 30px;
+            margin-top: 30px;
+            border: 1px solid rgb(35, 105, 211);
+            padding: 15;
             text-align: center;
-            padding: 20px;
-        }
-
-        #container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #result {
-            font-weight: bold;
-            margin-top: 10px;
+            background-color: beige;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: medium;
         }
     </style>
 </head>
-<!--Below contains the coding for the action click box to check if a Palindrom-->
 <body>
-    <div id="container">
-        <h1>Palindrome Checker</h1>
-        <button onclick="checkPalindrome()">Check Palindrome</button>
-        <p id="result"></p>
-    <div id="container">
-            <h1>Secret Message</h1>
-            <input type="text" id="firstName" placeholder="First Name">
-            <input type="text" id="lastName" placeholder="Last Name">
-            <input type="text" id="zipCode" placeholder="Zip Code">
-            <button onclick="checkInputs()">Check Inputs</button>
-            <p id="result"></p>
-    </div>
-<!--Below is the js coding for the parameters to actually check if word is a Palindrom or not-->
-    <script>
-        function isPalindrome(str) {
-            str = str.replace(/\s/g, '').toLowerCase();
-            return str === str.split('').reverse().join('');
-        }
-        // Below is the Function coding for creating the boxes for first, last name and zip code inputs
-        function checkInputs() {
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const zipCode = document.getElementById('zipCode').value.trim();
-            const resultElement = document.getElementById('result');
+    <header>
+        <h1>5 Week Course Projects</h1>
+    </header>
+    <nav>
+        <h2>CSC 102 Projects</h2>
+        <a href="c:\Users\15053\Documents\UAT\CSC102\Index.html">Index</a><br>
+        <a href="c:\Users\15053\Documents\UAT\CSC102\Boards.html">Boards</a><br>
+        <a href="c:\Users\15053\Documents\UAT\CSC102\game.html\game.html">Game</a><br>
+        <a href="c:\Users\15053\Documents\UAT\CSC102\String.html\String.html">String</a><br>
+        <!-- Add links to other pages as needed -->
+    </nav>
+    <main>
+        <!-- Your content goes here -->
+        <table>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+            <tr>
+                <td>Data 4</td>
+                <td>Data 5</td>
+                <td>Data 6</td>
+            </tr>
+            <tr>
+                <td>Data 7</td>
+                <td>Data 8</td>
+                <td>Data 9</td>
+            </tr>
+        </table>
+    </main> <br> 
+    <footer>
+        William Duran<br>
+        University of Advancing Technology<br>
+        2625 West Baseline Road<br>
+        Tempe, Arizona 85283<br>
+    </footer>
+    <button id="returnback" onclick="openCloseWindow()">Click Here To Go Back</button>
 
-            const fullName = `${firstName} ${lastName}`;
-
-            if (fullName.length > 20) {
-                resultElement.textContent = "Full name must have 20 characters or less.";
-                return;
-            }
-
-            if (!/^\d{5}$/.test(zipCode)) {
-                resultElement.textContent = "Invalid zip code. Must contain 5 digits.";
-                return;
-            }
-
-            resultElement.textContent = "Congratulations! You've unlocked the secret message: Open sesame!";
-        }
-        function checkPalindrome() {
-            let continueChecking = true;
-            while (continueChecking) {
-                const inputString = prompt("Type word and click OK. When box clears, click cancel to check if word is a Palindrome:");
-
-                if (inputString === null) {
-                    continueChecking = false;
-                } else if (inputString.trim().toLowerCase() === 'exit') {
-                    continueChecking = false; 
-                } else {
-                    const resultElement = document.getElementById('result');
-
-                    if (isPalindrome(inputString)) {
-                        resultElement.textContent = `"${inputString}" is a palindrome!`;
-                    } else {
-                        resultElement.textContent = `"${inputString}" is not a palindrome.`;
-                    }
-                }
-            }
-        }
-    </script> <br>
-        <img id="memeimage" src="Phobia - Copy.jpg" width="400" height="400"> <br> <!---I added the break here to jump the audio file-->
-  <audio controls autoplay loop> <!--I downloaded the file from the assigment page, biblesounds was downloading "safely"-->
-    <source src="us-lab-background-1.mp3" type="audio/mpeg">
-  </audio>
+<script>
+	function openCloseWindow(){
+	   window.open('input location of link');
+	   window.close();
+</script>
 </body>
 </html>
